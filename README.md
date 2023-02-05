@@ -1,15 +1,19 @@
-near-blank-project
-==================
+<div align="center">
+    <img src="https://seeklogo.com/images/N/near-icon-logo-10785AE366-seeklogo.com.png" width="100" />
+    <h1>
+        <strong>Near</strong>
+    </h1>
+</div>
 
 This app was initialized with [create-near-app]
 
-
+[nomicon.io]
 Quick Start
-===========
 
 If you haven't installed dependencies during setup:
 
     npm install
+
 
 
 Build and deploy your contract to TestNet with a temporary dev account:

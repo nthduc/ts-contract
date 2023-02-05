@@ -1,18 +1,19 @@
 // Find all our documentation at https://docs.near.org
-import { NearBindgen, near, call, view } from 'near-sdk-js';
+import { NearBindgen, near, call, view, LookupMap, initialize } from 'near-sdk-js';
 
 @NearBindgen({})
-class HelloNear {
-  message: string = "Hello";
+class K10NFTContract {
+  owner_id: string;
+  owner_by_id: LookupMap<string>;
 
-  @view({}) // This method is read-only and can be called for free
-  get_greeting(): string {
-    return this.message;
+  constructor(){
+    this.owner_id = "";
+    this.owner_by_id = new LookupMap<string>("duc");
   }
 
-  @call({}) // This method changes the state, for which it cost gas
-  set_greeting({ message }: { message: string }): void {
-    near.log(`Saving greeting ${message}`);
-    this.message = message;
+  @initialize({})
+  init({owner_id,owner_by_id_prefix}){
+    this.owner_id = owner_id;
+    this.owner_by_id = new LookupMap<string>(owner_by_id_prefix);
   }
 }
