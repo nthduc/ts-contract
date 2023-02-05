@@ -8,6 +8,7 @@
 This app was initialized with [create-near-app]
 
 [nomicon.io]
+[learnnear.club]
 Quick Start
 
 If you haven't installed dependencies during setup:
